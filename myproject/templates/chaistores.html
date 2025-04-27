@@ -1,0 +1,13 @@
+{%extends "base.html"%}
+{% block title %}Chai Stores{% endblock %}
+{% block content %}
+
+
+def chai_detail(request,Chai_id):
+    chai = get_object_or_404(Chai, id=Chai_id)
+    return render(request, 'chai_detail.html', {'chai': chai})
+
+def chai_list(request):
+    chai = Chai.objects.all()
+    return render(request, 'chai_list.html', {'chai': chai})
+
